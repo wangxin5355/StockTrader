@@ -1,5 +1,6 @@
 ﻿using Prism.Events;
 using Prism.Mvvm;
+using StockTrader.Common.Core;
 using StockTrader.EventArgs;
 using System;
 using System.Collections.Generic;
@@ -10,20 +11,20 @@ using System.Threading.Tasks;
 
 namespace StockTrader.ViewModels
 {
-    public class StatusInfoViewModel: BindableBase
+    public class StatusInfoViewModel: BaseViewModel
     {
-        IEventAggregator _ea;
+
         private ObservableCollection<string> _messages;
         public ObservableCollection<string> Messages
         {
             get { return _messages; }
             set { SetProperty(ref _messages, value); }
         }
-        public StatusInfoViewModel(IEventAggregator ea)
+        public StatusInfoViewModel()
         {
-            _ea = ea;
+
             Messages = new ObservableCollection<string>();
-            _ea.GetEvent<PubSubEvent<MyEventArgs>>().Subscribe(MessageReceived);
+            this.EventAggregator.GetEvent<PubSubEvent<MyEventArgs>>().Subscribe(MessageReceived);
         }
 
         private void MessageReceived(MyEventArgs message)

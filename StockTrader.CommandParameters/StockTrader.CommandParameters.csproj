@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E4EE183-620A-4F0F-A41C-EFE7A37D67CB}</ProjectGuid>
+    <ProjectGuid>{C8DCE4C5-641B-409F-ADC8-7771F8FD146E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StockTrader.Converters</RootNamespace>
-    <AssemblyName>StockTrader.Converters</AssemblyName>
+    <RootNamespace>StockTrader.CommandParameters</RootNamespace>
+    <AssemblyName>StockTrader.CommandParameters</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,11 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,14 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoolToBackground.cs" />
-    <Compile Include="BoolToLoginStatus.cs" />
-    <Compile Include="DateTimeToUpperStringConverter.cs" />
-    <Compile Include="DebugConverter.cs" />
-    <Compile Include="ImageSourceToBitmapImageConverter.cs" />
-    <Compile Include="ObjectToUpperCaseStringConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringToUpperCaseConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -20,27 +20,31 @@
         <converter:BoolToLoginStatus x:Key="BoolToLoginStatus"></converter:BoolToLoginStatus>
     </UserControl.Resources>
     <DockPanel>
-        <StackPanel Orientation="Horizontal"
-                    DockPanel.Dock="Right">
-
-            <!--<TextBlock x:Name="timelbl"
-                       Margin="5,0"
-                       Loaded="timelbl_Loaded_1"></TextBlock>-->
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="用户："></TextBlock>
-            <TextBlock Text="{Binding InvestorId}"></TextBlock>
-            <TextBlock Text="当前状态："
-                       Margin="20,0,0,0"></TextBlock>
-            <!--<TextBlock Text="{Binding IsLogin,Converter={StaticResource BoolToLoginStatus}}"></TextBlock>
-            <TextBlock Text="{Binding CTPMarketStatus}"
-                       Foreground="White"
-                       Background="{Binding IsCTPMarketConnected,Converter={StaticResource BoolToBackground}}"
-                       Margin="20,0,0,0" />
-            <TextBlock Text="{Binding CTPTraderStatus}"
-                       Foreground="White"
-                       Background="{Binding IsCTPTraderConnected,Converter={StaticResource BoolToBackground}}"
-                       Margin="5,0" />-->
-        </StackPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <TextBlock Name="lblCursorPosition" />
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2">
+                <TextBlock Text="c:\path\of\current\file.txt" />
+            </StatusBarItem>
+            <Separator Grid.Column="3" />
+            <StatusBarItem Grid.Column="4">
+                <ProgressBar Value="50" Width="90" Height="16" />
+            </StatusBarItem>
+        </StatusBar>
     </DockPanel>
 </UserControl>
