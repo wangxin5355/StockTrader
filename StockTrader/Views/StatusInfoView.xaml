@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="StockTrader.Views.StatusInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"    
+             xmlns:local="clr-namespace:StockTrader.ViewModels"
+             xmlns:converter="clr-namespace:StockTrader.Converters;assembly=StockTrader.Converters"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment"
+                    Value="Center"></Setter>
+            <Setter Property="FontSize"
+                    Value="14"></Setter>
+        </Style>
+        <converter:BoolToBackground x:Key="BoolToBackground"></converter:BoolToBackground>
+        <converter:BoolToLoginStatus x:Key="BoolToLoginStatus"></converter:BoolToLoginStatus>
+    </UserControl.Resources>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Right">
+
+            <!--<TextBlock x:Name="timelbl"
+                       Margin="5,0"
+                       Loaded="timelbl_Loaded_1"></TextBlock>-->
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="用户："></TextBlock>
+            <TextBlock Text="{Binding InvestorId}"></TextBlock>
+            <TextBlock Text="当前状态："
+                       Margin="20,0,0,0"></TextBlock>
+            <!--<TextBlock Text="{Binding IsLogin,Converter={StaticResource BoolToLoginStatus}}"></TextBlock>
+            <TextBlock Text="{Binding CTPMarketStatus}"
+                       Foreground="White"
+                       Background="{Binding IsCTPMarketConnected,Converter={StaticResource BoolToBackground}}"
+                       Margin="20,0,0,0" />
+            <TextBlock Text="{Binding CTPTraderStatus}"
+                       Foreground="White"
+                       Background="{Binding IsCTPTraderConnected,Converter={StaticResource BoolToBackground}}"
+                       Margin="5,0" />-->
+        </StackPanel>
+    </DockPanel>
+</UserControl>
